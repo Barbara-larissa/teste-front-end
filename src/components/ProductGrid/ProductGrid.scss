@@ -1,0 +1,488 @@
+
+/* ==================================================
+   PRODUCT GRID — CONTAINER PRINCIPAL
+   ================================================== */
+
+.related-products {
+  position: relative;
+  width: 100%;
+  max-width: 1364px;
+  margin: 0 auto;
+  padding: 32px 0 40px;
+  border: none;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+/* BOX SIZING — ELEMENTOS INTERNOS */
+
+.related-products *,
+.related-products *::before,
+.related-products *::after {
+  box-sizing: border-box;
+}
+
+
+/* ==================================================
+   TÍTULO DO CARROSSEL
+   ================================================== */
+
+.related-products__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto 12px;
+  padding: 0 32px;
+}
+
+/* TEXTO DO TÍTULO */
+
+.related-products__heading h2 {
+  flex-shrink: 0;
+  margin: 0;
+  color: #3442b5;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+}
+
+
+
+/* LINHAS DECORATIVAS DO TÍTULO */
+
+.related-products__line {
+  flex: 1 1 auto;
+  max-width: 350px;
+  height: 1px;
+  background: #dedede;
+}
+
+
+/* ==================================================
+   CATEGORIAS — NAVEGAÇÃO
+   ================================================== */
+
+.related-products__categories {
+  display: flex;
+  align-items: stretch;
+  width: calc(100% - 36px);
+  max-width: 1280px;
+  height: 40px;
+  margin: 0 auto 10px;
+  padding: 0;
+}
+
+/* BOTÕES DAS CATEGORIAS */
+
+.related-products__category {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 40px;
+  padding: 0 8px;
+  border: 1px solid #dedede;
+  border-right: 0;
+  border-radius: 0;
+  background: #ffffff;
+  color: #333333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* BORDA DIREITA DA ÚLTIMA CATEGORIA */
+
+.related-products__category:last-child {
+  border-right: 1px solid #dedede;
+}
+
+/* CATEGORIA ATIVA */
+
+.related-products__category--active {
+  color: #3442b5;
+  font-weight: 700;
+}
+
+/* FOCO ACESSÍVEL DAS CATEGORIAS */
+
+.related-products__category:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid #3442b5;
+  outline-offset: -2px;
+}
+
+
+/* ==================================================
+   CARROSSEL — CONTAINER E ESPAÇAMENTO
+   ================================================== */
+
+.related-products__carousel {
+  position: relative;
+  width: 100%;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+
+/* ==================================================
+   PRODUCT GRID — LISTA DE PRODUTOS
+   ================================================== */
+
+.product-grid {
+  display: grid;
+  grid-auto-columns: 304px;
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 12px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+/* OCULTAR BARRA DE ROLAGEM NO CHROME E SAFARI */
+
+.product-grid::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ==================================================
+   CARDS — ESTRUTURA E DIMENSÕES
+   ================================================== */
+
+.product-grid__card {
+  position: relative;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* CARD DE PRODUTO */
+
+.product-grid__card .product-card {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+
+/* ==================================================
+   SETAS — ESTILO PRINCIPAL
+   ================================================== */
+
+.related-products__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid #dedede;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #3442b5;
+  cursor: pointer;
+}
+
+/* SETA ESQUERDA */
+
+.related-products__arrow--left {
+  left: 4px;
+}
+
+/* SETA DIREITA */
+
+.related-products__arrow--right {
+  right: 4px !important;
+}
+
+/* ÍCONES DAS SETAS */
+
+.related-products__arrow svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* FOCO ACESSÍVEL DAS SETAS */
+
+.related-products__arrow:focus-visible {
+  outline: 2px solid #3442b5;
+  outline-offset: 3px;
+}
+
+
+/* ==================================================
+   TELAS GRANDES — A PARTIR DE 1600PX
+   ================================================== */
+
+@media screen and (min-width: 1600px) {
+
+  /* ESPAÇAMENTO DA SEÇÃO */
+
+  .related-products {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
+  /* ESPAÇAMENTO DO TÍTULO */
+
+  .related-products__heading {
+    margin-bottom: 12px;
+  }
+
+  /* TAMANHO DO TÍTULO */
+
+  .related-products__heading h2 {
+    font-size: 30px;
+  }
+
+  /* ESPAÇAMENTO DAS CATEGORIAS */
+
+  .related-products__categories {
+    margin-bottom: 10px;
+  }
+
+  /* ESPAÇAMENTO LATERAL DO CARROSSEL */
+
+  .related-products__carousel {
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+
+  /* LARGURA E ESPAÇAMENTO DOS CARDS */
+
+  .product-grid {
+    grid-auto-columns: 304px;
+    gap: 10px;
+  }
+
+  /* ALTURA DOS CARDS */
+
+  .product-grid__card .product-card {
+    height: 500px;
+  }
+}
+
+
+/* ==================================================
+   NOTEBOOKS E TELAS ATÉ 1350PX
+   ================================================== */
+
+@media screen and (max-width: 1350px) {
+
+  /* LARGURA DA SEÇÃO */
+
+  .related-products {
+    max-width: 100%;
+  }
+
+  /* ESPAÇAMENTO LATERAL DO CARROSSEL */
+
+  .related-products__carousel {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  /* DISTRIBUIÇÃO DOS CARDS */
+
+  .product-grid {
+    grid-auto-columns: calc((100% - 30px) / 4);
+    gap: 10px;
+  }
+
+  /* ALTURA DOS CARDS */
+
+  .product-grid__card .product-card {
+    height: 500px;
+  }
+
+  /* LARGURA DAS CATEGORIAS */
+
+  .related-products__categories {
+    width: calc(100% - 24px);
+  }
+}
+
+
+/* ==================================================
+   TABLETS — ATÉ 768PX
+   ================================================== */
+
+@media screen and (max-width: 768px) {
+
+  /* ESPAÇAMENTO DA SEÇÃO */
+
+  .related-products {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  /* TÍTULO */
+
+  .related-products__heading {
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  /* TAMANHO DO TÍTULO */
+
+  .related-products__heading h2 {
+    font-size: 15px;
+  }
+
+  /* CATEGORIAS COM ROLAGEM HORIZONTAL */
+
+  .related-products__categories {
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: calc(100% - 24px);
+    margin-bottom: 16px;
+  }
+
+  /* LARGURA DOS BOTÕES DE CATEGORIA */
+
+  .related-products__category {
+    flex: 0 0 120px;
+    font-size: 10px;
+  }
+
+  /* ESPAÇAMENTO LATERAL DO CARROSSEL */
+
+  .related-products__carousel {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  /* EXIBIÇÃO DE DOIS CARDS POR ÁREA VISÍVEL */
+
+  .product-grid {
+    grid-auto-columns: calc((100% - 10px) / 2);
+    gap: 10px;
+  }
+
+  /* ALTURA DOS CARDS */
+
+  .product-grid__card .product-card {
+    height: 460px;
+  }
+
+  /* TAMANHO DAS SETAS */
+
+  .related-products__arrow {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* POSIÇÃO DA SETA ESQUERDA */
+
+  .related-products__arrow--left {
+    left: 2px;
+  }
+
+  /* POSIÇÃO DA SETA DIREITA */
+
+  .related-products__arrow--right {
+    right: 2px;
+  }
+}
+
+
+/* ==================================================
+   CELULARES — ATÉ 480PX
+   ================================================== */
+
+@media screen and (max-width: 480px) {
+
+  /* ESPAÇAMENTO DA SEÇÃO */
+
+  .related-products {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  /* TÍTULO */
+
+  .related-products__heading {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  /* TAMANHO DO TÍTULO */
+
+  .related-products__heading h2 {
+    font-size: 14px;
+  }
+
+  /* ESPAÇAMENTO DAS CATEGORIAS */
+
+  .related-products__categories {
+    margin-bottom: 14px;
+  }
+
+  /* BOTÕES DE CATEGORIA */
+
+  .related-products__category {
+    flex-basis: 105px;
+    height: 38px;
+    font-size: 10px;
+  }
+
+  /* ESPAÇAMENTO LATERAL DO CARROSSEL */
+
+  .related-products__carousel {
+    padding-right: 26px;
+    padding-left: 26px;
+  }
+
+  /* LARGURA DOS CARDS */
+
+  .product-grid {
+    grid-auto-columns: 82%;
+    gap: 12px;
+  }
+
+  /* ALTURA DOS CARDS */
+
+  .product-grid__card .product-card {
+    height: 450px;
+  }
+}
+
+
+/* ==================================================
+   ACESSIBILIDADE — MOVIMENTO REDUZIDO
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .product-grid {
+    scroll-behavior: auto;
+  }
+}

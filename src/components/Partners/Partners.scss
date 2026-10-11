@@ -1,0 +1,151 @@
+$yellow: #f7ca11;
+$purple-dark: #271c47;
+$focus: #ffffff;
+
+.partners {
+  width: 100%;
+  max-width: 1281px;
+  margin: 100px auto 80px;
+  padding-inline: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+.partners__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  width: 100%;
+}
+
+.partners__card {
+  position: relative;
+  display: flex;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000000;
+  isolation: isolate;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.15) 60%,
+        rgba(0, 0, 0, 0) 100%);
+    content: '';
+  }
+}
+
+.partners__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.partners__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 114px 44.18px 40px;
+}
+
+.partners__title {
+  width: 216.49px;
+  height: 60px;
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.partners__text {
+  max-width: 190px;
+  margin: 8px 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.partners__button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 144.69px;
+  height: 48px;
+  margin-top: 50px;
+  border: 0;
+  border-radius: 6px;
+  background: $yellow;
+  color: $purple-dark;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $focus;
+    outline-offset: 3px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 720px) {
+  .partners__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners__card {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .partners__content {
+    padding: 56px 24px 28px;
+  }
+
+  .partners__title {
+    min-height: 0;
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .partners__button {
+    margin-top: 24px;
+  }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .partners__button {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

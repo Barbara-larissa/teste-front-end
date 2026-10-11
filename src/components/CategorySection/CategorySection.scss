@@ -1,0 +1,228 @@
+.category-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  margin-top: 32px !important;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.category-section__list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 128px));
+  align-items: start;
+  justify-content: center;
+  column-gap: 24px;
+  row-gap: 0;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.category-section__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  height: 171px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #4e4e4e;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.category-section__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 128px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f4f4f4;
+  color: #4e4e4e;
+  box-shadow: 0 4px 11px rgb(0 0 0 / 13%);
+  box-sizing: border-box;
+}
+
+.category-section__icon svg {
+  display: block;
+  width: 61px;
+  height: 61px;
+  max-width: 70%;
+  max-height: 70%;
+  color: inherit;
+}
+
+.category-section__name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 21px;
+  margin: 0;
+  padding: 0 2px;
+  color: #4e4e4e;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.category-section__item--active .category-section__icon {
+  color: #3019b2;
+}
+
+.category-section__item--active .category-section__name {
+  color: #3019b2;
+}
+
+.category-section__item:focus-visible {
+  outline: 2px solid #3019b2;
+  outline-offset: 3px;
+}
+
+/* Monitores grandes: desktop de alta resolução e 25 polegadas ou mais */
+@media (min-width: 1600px) {
+  .category-section {
+    padding-top: 16px;
+  }
+
+  .category-section__list {
+    grid-template-columns: repeat(7, 128px);
+    column-gap: 24px;
+    max-width: 1040px;
+  }
+
+  .category-section__item {
+    height: 171px;
+  }
+
+  .category-section__icon {
+    width: 128px;
+    height: 128px;
+  }
+
+  .category-section__icon svg {
+    width: 61px;
+    height: 61px;
+  }
+
+  .category-section__name {
+    font-size: 14px;
+  }
+}
+
+/* Notebooks e desktops menores */
+@media (max-width: 1199px) {
+  .category-section {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .category-section__list {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    column-gap: 16px;
+    max-width: 100%;
+  }
+
+  .category-section__item {
+    height: auto;
+  }
+
+  .category-section__icon {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .category-section__icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .category-section__name {
+    min-height: 21px;
+    font-size: 11px;
+    white-space: normal;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .category-section {
+    padding: 16px 16px 0;
+  }
+
+  .category-section__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  .category-section__icon {
+    max-width: 128px;
+    border-radius: 10px;
+  }
+
+  .category-section__icon svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .category-section__name {
+    font-size: 10px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .category-section {
+    padding: 16px 12px 0;
+  }
+
+  .category-section__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 8px;
+    row-gap: 16px;
+  }
+
+  .category-section__icon {
+    border-radius: 8px;
+  }
+
+  .category-section__icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .category-section__name {
+    min-height: 21px;
+    padding: 0;
+    font-size: 9px;
+    line-height: 1.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .category-section__item,
+  .category-section__icon,
+  .category-section__name {
+    transition: none;
+  }
+}

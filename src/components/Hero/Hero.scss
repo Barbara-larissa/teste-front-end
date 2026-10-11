@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+  background-image: url('/images/banner-black-friday.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 78%) 0%,
+      rgb(0 0 0 / 48%) 42%,
+      rgb(0 0 0 / 8%) 100%
+    );
+    content: '';
+  }
+}
+
+.hero__overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 32px max(5.5%, calc((100% - 1280px) / 2));
+}
+
+.hero__content {
+  width: 100%;
+  max-width: 822px;
+  color: #ffffff;
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+.hero__content h1 {
+  max-width: 822px;
+  margin: 0 0 10px;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(32px, 3.34vw, 48px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.7px;
+}
+
+.hero__promotion {
+  margin: 0 0 28px;
+  color: #ffffff;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(20px, 2.23vw, 32px);
+  font-weight: 400;
+  line-height: 1.5;
+
+  strong {
+    color: #ffcf00;
+    font-weight: 700;
+  }
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  height: 50px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 5px;
+  background: #ffcf00;
+  color: #171717;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #f0bd00;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+  }
+}
+
+/* TELAS GRANDES */
+
+/* TELAS GRANDES - ACIMA DE 1600px */
+@media screen and (min-width: 1600px) {
+  .hero {
+    height: 430px;
+    background-position: center;
+  }
+
+  .hero__overlay {
+    padding-right: max(5.5%, calc((100% - 1280px) / 2));
+    padding-left: max(5.5%, calc((100% - 1280px) / 2));
+  }
+}
+
+
+
+/* NOTEBOOKS E TELAS MÉDIAS */
+@media screen and (max-width: 1100px) {
+  .hero__content {
+    max-width: 600px;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(32px, 4vw, 40px);
+  }
+
+  .hero__promotion {
+    font-size: 22px;
+  }
+}
+
+/* TABLETS */
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+
+  .hero__overlay {
+    padding: 28px 24px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(28px, 5vw, 36px);
+  }
+
+  .hero__promotion {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .hero__button {
+    width: 160px;
+    height: 44px;
+  }
+}
+
+/* CELULARES */
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 260px;
+    background-position: center;
+  }
+
+  .hero__overlay {
+    padding: 24px 20px;
+  }
+
+  .hero__content h1 {
+    font-size: 27px;
+  }
+
+  .hero__promotion {
+    font-size: 17px;
+  }
+
+  .hero__button {
+    width: 150px;
+    height: 42px;
+    font-size: 13px;
+  }
+}
+
+/* ACESSIBILIDADE */
+@media (prefers-reduced-motion: reduce) {
+  .hero__button {
+    transition: none;
+  }
+}
+
+

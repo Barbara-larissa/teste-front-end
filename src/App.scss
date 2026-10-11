@@ -1,0 +1,60 @@
+
+
+.app {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #252333;
+  overflow-x: clip;
+}
+
+
+.main-content {
+  width: 100%;
+  min-height: calc(100vh - 144px);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.loading-message,
+.error-message {
+  width: min(100% - 48px, 1440px);
+  margin: 40px auto;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.error-message p {
+  margin-bottom: 16px;
+  color: #d93025;
+}
+
+.error-message button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #6c3ce9;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.error-message button:hover {
+  background: #5428c7;
+}
+
+@media (min-width: 1600px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-message,
+  .error-message {
+    width: calc(100% - 32px);
+  }
+}
+

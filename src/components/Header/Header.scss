@@ -1,0 +1,440 @@
+$purple: #3012d3;
+$gray: #9f9f9f;
+$divider: #f0f0f0;
+$container: 1280px;
+$focus: #6c3ce9;
+
+
+.header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: $container;
+  margin-inline: auto;
+  padding-inline: clamp(12px, 2.5vw, 24px);
+  background: #ffffff;
+  color: $gray;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: #ffffff;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+
+/* =========================
+   1ª LINHA: BENEFÍCIOS (32px, borda inclusa)
+   ========================= */
+.header__top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0 !important;
+  width: 764px !important;
+  max-width: 100% !important;
+  height: 32px !important;
+  margin-inline: auto !important;
+  border-bottom: 1px solid $divider;
+}
+
+.header__benefit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  white-space: nowrap;
+
+  strong {
+    color: $purple;
+    font-weight: 600;
+  }
+}
+
+.header__benefit-icon {
+  color: $gray;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* =========================
+   2ª LINHA: LOGO / BUSCA / AÇÕES (72px, borda inclusa)
+   Desktop: 1fr | busca (até 630) | 1fr  -> busca centralizada.
+   Em 1280: laterais de 301px; logo (139) à esquerda, ações (216) à direita.
+   ========================= */
+.header__main {
+  display: grid;
+  grid-template-columns: minmax(139px, 1fr) minmax(0, 630px) minmax(216px, 1fr);
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+  height: 72px;
+  border-bottom: 1px solid $divider;
+
+
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  min-width: 139px;
+  color: #292044;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header__logo-symbol {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 41.3px;
+  height: 41.3px;
+  border-radius: 50%;
+  background: #ffca05;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 800;
+  padding-left: 6px;
+  transform: translateX(3px);
+}
+
+.header__logo-text {
+  position: relative;
+}
+
+/* Busca */
+.header__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 630px;
+  min-width: 0;
+  height: 48px;
+  margin: 0;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: #f6f5f2;
+  transition: box-shadow 0.2s ease;
+
+  input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    color: #333333;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+
+    &::placeholder {
+      color: $gray;
+      opacity: 1;
+    }
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+
+  button {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: $gray;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      transition: stroke 0.2s ease;
+    }
+
+    &:hover svg {
+      stroke: $purple;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $focus;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px rgba($purple, 0.25);
+  }
+}
+
+/* Ações: área de referência 216 x 32 (4 colunas de 54px) */
+.header__actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-self: end;
+  width: 216px;
+  height: 32px;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: $gray;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.2s ease;
+    }
+
+    &:hover svg {
+      stroke: $purple;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $focus;
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+  }
+}
+
+/* =========================
+   3ª LINHA: NAVEGAÇÃO (40px)
+   ========================= */
+.header__nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  height: 40px;
+  overflow-x: auto; // só rola quando realmente não couber
+  background: #ffffff;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  a {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    color: $gray;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $purple;
+    }
+
+    &:focus-visible {
+      color: $purple;
+      outline: 2px solid $focus;
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+  }
+
+  .header__nav-highlight {
+    color: $purple;
+  }
+
+  .header__nav-subscription {
+    gap: 6px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+}
+
+/* =========================
+   TABLET (<= 900px)
+   ========================= */
+@media (max-width: 900px) {
+  .header__top {
+    gap: 12px;
+  }
+
+  .header__benefit {
+    font-size: 10px;
+  }
+
+  .header__nav {
+    gap: 20px;
+  }
+}
+
+/* =========================
+   MOBILE (<= 719px)
+   Logo + ações na 1ª área, busca em linha própria
+   ========================= */
+@media (max-width: 719px) {
+  .header__top {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px 16px;
+    height: auto;
+    min-height: 32px;
+    padding: 6px 0;
+  }
+
+  .header__benefit {
+    gap: 4px;
+    font-size: 10px;
+    white-space: normal;
+  }
+
+  .header__main {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'logo actions'
+      'search search';
+    gap: 12px 8px;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .header__logo {
+    grid-area: logo;
+    min-width: 0;
+    font-size: 22px;
+  }
+
+  .header__logo-symbol {
+    width: 36px;
+    height: 36px;
+    font-size: 26px;
+  }
+
+  .header__search {
+    grid-area: search;
+    max-width: none;
+    height: 44px;
+  }
+
+  .header__actions {
+    grid-area: actions;
+    grid-template-columns: repeat(4, 44px); // alvo de toque de 44px
+    width: auto;
+    height: 44px;
+
+    button {
+      height: 44px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .header__nav {
+    justify-content: flex-start;
+    gap: 24px;
+  }
+}
+
+/* =========================
+   CELULARES PEQUENOS (<= 380px): 320 / 360 / 375
+   ========================= */
+@media (max-width: 380px) {
+  .header__logo {
+    font-size: 19px;
+  }
+
+  .header__logo-symbol {
+    width: 32px;
+    height: 32px;
+    font-size: 23px;
+  }
+
+  .header__actions {
+    grid-template-columns: repeat(4, 40px);
+  }
+
+  .header__benefit-icon {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .header__search,
+  .header__search button svg,
+  .header__actions button svg,
+  .header__nav a {
+    transition: none;
+  }
+}
+
+@media (min-width: 1600px) {
+  .header {
+    max-width: none;
+    padding-inline: max(24px, calc((100% - 2800px) / 2));
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1599px) {
+  .header {
+    max-width: none;
+    padding-inline: 20px;
+  }
+}
