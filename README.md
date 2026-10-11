@@ -6,9 +6,9 @@
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass" />
 </p>
-
 <p align="center">
-  Projeto desenvolvido como parte do teste técnico para a vaga de <strong>Desenvolvedora Front-End Júnior</strong> da Econverse.
+  Projeto desenvolvido como parte do processo seletivo da <strong>Econverse</strong>,<br />
+  utilizando <strong>React</strong>, <strong>TypeScript</strong>, <strong>Vite</strong> e <strong>Sass</strong>.
 </p>
 
 ---
