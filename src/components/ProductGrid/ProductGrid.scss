@@ -130,7 +130,7 @@
 .related-products__carousel {
   position: relative;
   width: 100%;
-  padding: 0 48px;
+  padding: 0 16px;
   box-sizing: border-box;
 }
 
@@ -210,10 +210,8 @@
   left: 4px;
 }
 
-/* SETA DIREITA */
-
 .related-products__arrow--right {
-  right: 4px !important;
+  right: 4px;
 }
 
 /* ÍCONES DAS SETAS */
@@ -269,10 +267,6 @@
 
   /* ESPAÇAMENTO LATERAL DO CARROSSEL */
 
-  .related-products__carousel {
-    padding-right: 36px;
-    padding-left: 36px;
-  }
 
   /* LARGURA E ESPAÇAMENTO DOS CARDS */
 
@@ -376,10 +370,17 @@
   /* ESPAÇAMENTO LATERAL DO CARROSSEL */
 
   .related-products__carousel {
-    padding-right: 28px;
-    padding-left: 28px;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
   }
 
+  .related-products__arrow--left {
+    left: 12px !important;
+  }
+
+  .related-products__arrow--right {
+    right: 12px !important;
+  }
   /* EXIBIÇÃO DE DOIS CARDS POR ÁREA VISÍVEL */
 
   .product-grid {
@@ -411,6 +412,10 @@
   .related-products__arrow--right {
     right: 2px;
   }
+
+
+
+
 }
 
 
@@ -486,3 +491,4 @@
     scroll-behavior: auto;
   }
 }
+
